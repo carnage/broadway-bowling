@@ -1,0 +1,17 @@
+{
+    "name": "carnage/broadway-bowling",
+    "description": "An example cqrs event sourcing bowling score counter using broadway",
+    "minimum-stability": "stable",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Christopher Riley"
+        }
+    ],
+    "require": {
+        "broadway/broadway": "0.8.x-dev"
+    },
+    "autoload": {
+        "psr-4": {"Carnage\\Bowling": "src/"}
+    }
+}
