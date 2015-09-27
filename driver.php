@@ -12,3 +12,9 @@ $uuidGenerator = new Broadway\UuidGenerator\Rfc4122\Version4Generator();
 $handler = new Carnage\Bowling\CommandHandler\BowlingGame($repository, $uuidGenerator);
 
 $commandBus->subscribe($handler);
+
+$readRepository = new \Broadway\ReadModel\InMemory\InMemoryRepository();
+
+$projection = new \Carnage\Bowling\Projection\Scoreboard($readRepository);
+
+$eventBus->subscribe($projection);
