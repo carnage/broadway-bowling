@@ -20,13 +20,13 @@ class Scoreboard extends Projector
         $this->repository = $repository;
     }
 
-    protected function handleGameStarted(GameStarted $event)
+    protected function applyGameStarted(GameStarted $event)
     {
         $game = ScoreboardReadModel::create($event->getUuid(), $event->getPlayerName());
         $this->repository->save($game);
     }
 
-    protected function handleThrowRecorded(ThrowRecorded $event)
+    protected function applyThrowRecorded(ThrowRecorded $event)
     {
         /** @var ScoreboardReadModel $game */
         $game = $this->repository->find($event->getBowlingGameId());

@@ -19,7 +19,7 @@ class Fouls extends Projector
         $this->repository = $repository;
     }
 
-    protected function handleThrowRecorded(ThrowRecorded $event)
+    protected function applyThrowRecorded(ThrowRecorded $event)
     {
         if ($event->getThrow() === 0 && $event->isFoul()) {
             /** @var FoulLog $model */

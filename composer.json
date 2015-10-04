@@ -12,6 +12,6 @@
         "broadway/broadway": "0.8.x-dev"
     },
     "autoload": {
-        "psr-4": {"Carnage\\Bowling": "src/"}
+        "psr-4": {"Carnage\\Bowling\\": "src/"}
     }
 }
